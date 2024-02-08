@@ -1,3 +1,4 @@
+import 'package:bikeapp/pages/add.dart';
 import 'package:bikeapp/pages/view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -43,6 +44,8 @@ class _MenuPageState extends State<MenuPage> {
                       Icon(Icons.directions_bike_outlined,size: 40,),
                       TextButton(
                           onPressed: (){
+                            Navigator.push(context, MaterialPageRoute(builder:
+                                (context)=>AddPage()));
 
                           }, child: Text("Bike Entry",
                         style: TextStyle(fontSize: 20,
