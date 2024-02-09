@@ -9,7 +9,7 @@ class BikeApiService{
       String yearofManu,
       String cc,) async{
     var client = http.Client();
-    var apiUrl = Uri.parse("http://192.168.1.4:3001/api/bike/addbike");
+    var apiUrl = Uri.parse("http://192.168.228.9:3001/api/bike/addbike");
     var response = await client.post(apiUrl,
         headers: <String,String>{
           "Content-Type" : "application/json; charset=UTF-8"
@@ -23,7 +23,6 @@ class BikeApiService{
         }
         )
     );
-
     if(response.statusCode==200)
     {
       return json.decode(response.body);
@@ -32,13 +31,11 @@ class BikeApiService{
     {
       throw Exception("Failed to send data");
     }
-
   }
-
 
   Future<List<Bike>> getData() async{
     var client=http.Client();
-    var ApiUrl=Uri.parse("http://192.168.1.4:3001/api/bike/viewbike");
+    var ApiUrl=Uri.parse("http://192.168.228.9:3001/api/bike/viewbike");
     var response =await client.get(ApiUrl);
 
     if(response.statusCode==200)
